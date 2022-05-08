@@ -6,6 +6,7 @@ import {
     HomeIcon,
     UserGroupIcon,
     ViewGridIcon,
+    ChevronDoubleDownIcon,
 
 } from '@heroicons/react/solid';
 
@@ -19,7 +20,7 @@ import HeaderIcon from './HeaderIcon';
 
 function Header() {
   return (
-    <div>
+    <div className='sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md'>
         {/* left */}
         <div className='flex items-center'>
         <Image
@@ -31,14 +32,14 @@ function Header() {
         
         <div className='flex ml-2 rounded-full p-2 bg-gray-200'>
         <SearchIcon className='h-6 text-gray-600'/>
-        <input className='flex bg-transparent ml-2 outline-none placeholder-gray-500' 
+        <input className='bg-transparent ml-2 outline-none placeholder-gray-500 flex-shrink hidden md:inline-flex' 
         type='text' placeholder='search'/>
         </div>
         </div>
         {/* center */}
         <div className='flex justify-center flex-grow'>
-            <div>
-                <HeaderIcon Icon={HomeIcon}/>
+            <div className='flex space-x-6 md:space-x-2'>
+                <HeaderIcon active Icon={HomeIcon}/>
                 <HeaderIcon Icon={FlagIcon}/>
                 <HeaderIcon Icon={PlayIcon}/>
                 <HeaderIcon Icon={ShoppingCartIcon}/>
@@ -47,6 +48,14 @@ function Header() {
             </div>
         </div>
         {/* right  */}
+        <div className='flex items-center sm:space-x-2 justify-end'>
+        {/* Profile image */}
+        <p className='font-semibold pr-3 whitespace-nowrap'>darc 40</p>
+        <ViewGridIcon className='icon'/>
+        <ChatIcon className='icon'/>
+        <BellIcon className='icon'/>
+        <ChevronDoubleDownIcon className='icon'/>
+        </div>
     </div>
   )
 }
